@@ -43,7 +43,7 @@ class Read(APIView):
         csv_file = request.FILES.get('csv_file')
         decoded_file = csv_file.read().decode('utf-8').splitlines()
         #csv_file = 'C:/Users/muttu1/Desktop/Book.csv'
-        reader = csv.DictReader(open(decoded_file))
+        reader = csv.DictReader(decoded_file)
         for row in reader:
             bank_name = row.get('bank_name')
             ifsc = row.get('ifsc')
